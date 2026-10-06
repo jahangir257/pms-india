@@ -28,7 +28,7 @@ export default function Dashboard() {
         </section>
         <section className="card p-5 lg:col-span-2">
           <h2 className="mb-4 text-lg text-brand-900">Tasks by status</h2>
-          <div className="mb-4 flex h-2 overflow-hidden rounded-full bg-cream-200">{TASK_STATUSES.map((s) => <div key={s} title={`${label(s)}: ${d.tasksByStatus[s]}`} style={{ width: `${(d.tasksByStatus[s] / total) * 100}%`, background: COLORS[s] }} />)}</div>
+          <div className="mb-4 flex h-2.5 overflow-hidden rounded-full bg-cream-200">{TASK_STATUSES.map((s) => <div key={s} title={`${label(s)}: ${d.tasksByStatus[s]}`} style={{ width: `${(d.tasksByStatus[s] / total) * 100}%`, background: COLORS[s] }} />)}</div>
           <ul className="space-y-2 text-sm">{TASK_STATUSES.map((s) => <li key={s} className="flex items-center justify-between"><span className="flex items-center gap-2"><i className="h-3 w-3 rounded-full" style={{ background: COLORS[s] }} />{label(s)}</span><span className="text-brand-900">{d.tasksByStatus[s]}</span></li>)}</ul>
         </section>
         <section className="card p-5 lg:col-span-3">
