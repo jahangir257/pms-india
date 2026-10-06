@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.share-tech-regular { font-family: "Share Tech", sans-serif; font-weight: 400; font-style: normal; }
+html, body { font-family: "Share Tech", sans-serif; font-weight: 400; font-style: normal; background: #FDF9F0; color: #0c2a21; }
+* { font-weight: 400 !important; }
+h1, h2, h3 { letter-spacing: .02em; }
+/* Themed scrollbars (page, modals, tables, chat, notes) */
+* { scrollbar-width: thin; scrollbar-color: #064E3B #FBF1DC; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: #FBF1DC; border-radius: 9999px; }
+*::-webkit-scrollbar-thumb { background: #064E3B; border-radius: 9999px; border: 2px solid #FBF1DC; }
+*::-webkit-scrollbar-thumb:hover { background: #0B6B52; }
+*::-webkit-scrollbar-thumb:active { background: #03281E; }
+*::-webkit-scrollbar-corner { background: #FBF1DC; }
+html { scrollbar-gutter: stable; }
+::selection { background: #064E3B; color: #F8E7C9; }
+@layer components {
+  .progress-track { @apply relative flex-1 overflow-hidden rounded-full bg-cream-200; height: 10px; min-height: 10px; max-height: 10px; flex: 1 1 0%; }
+  .progress-fill { @apply h-full rounded-full bg-brand-900 transition-all; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm tracking-wide transition disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-900/40; }
+  .btn-primary { @apply bg-brand-900 text-cream hover:bg-brand-800; }
+  .btn-soft { @apply bg-cream text-brand-900 hover:bg-cream-300; }
+  .btn-ghost { @apply text-brand-900 hover:bg-cream-100; }
+  .btn-danger { @apply bg-red-700 text-white hover:bg-red-800; }
+  .input { @apply w-full rounded-lg border border-cream-300 bg-white px-3 py-2 text-sm text-brand-950 placeholder:text-brand-900/40 focus:border-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-900/15; }
+  .card { @apply rounded-xl border border-cream-300 bg-white/80 shadow-[0_1px_0_rgba(6,78,59,.04)]; }
+  .th { @apply px-4 py-3 text-left text-xs uppercase tracking-widest text-brand-900/70; }
+  .td { @apply px-4 py-3 text-sm; }
+}

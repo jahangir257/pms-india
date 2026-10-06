@@ -1,0 +1,15 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes: [mongo_data:/data/db]
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env.local
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/pms_india
+    ports: ["3000:3000"]
+    depends_on: [mongo]
+volumes:
+  mongo_data:
